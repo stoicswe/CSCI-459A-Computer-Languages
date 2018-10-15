@@ -1,0 +1,11 @@
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/bin/Debug/netcoreapp2.1/Scanner Project.deps.json
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/bin/Debug/netcoreapp2.1/Scanner Project.runtimeconfig.json
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/bin/Debug/netcoreapp2.1/Scanner Project.runtimeconfig.dev.json
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/bin/Debug/netcoreapp2.1/Scanner Project.dll
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/bin/Debug/netcoreapp2.1/Scanner Project.pdb
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.csprojAssemblyReference.cache
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.csproj.CoreCompileInputs.cache
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.AssemblyInfoInputs.cache
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.AssemblyInfo.cs
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.dll
+/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.pdb

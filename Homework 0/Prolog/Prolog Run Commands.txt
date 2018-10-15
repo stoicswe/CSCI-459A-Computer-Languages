@@ -1,0 +1,1 @@
+swipl -q -t main -s prologtest.pl -- 1 2 3
