@@ -9,3 +9,14 @@
 /home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.AssemblyInfo.cs
 /home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.dll
 /home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/Debug/netcoreapp2.1/Scanner Project.pdb
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\bin\Debug\netcoreapp2.1\Scanner Project.deps.json
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\bin\Debug\netcoreapp2.1\Scanner Project.runtimeconfig.json
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\bin\Debug\netcoreapp2.1\Scanner Project.runtimeconfig.dev.json
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\bin\Debug\netcoreapp2.1\Scanner Project.dll
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\bin\Debug\netcoreapp2.1\Scanner Project.pdb
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\obj\Debug\netcoreapp2.1\Scanner Project.csprojAssemblyReference.cache
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\obj\Debug\netcoreapp2.1\Scanner Project.csproj.CoreCompileInputs.cache
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\obj\Debug\netcoreapp2.1\Scanner Project.AssemblyInfoInputs.cache
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\obj\Debug\netcoreapp2.1\Scanner Project.AssemblyInfo.cs
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\obj\Debug\netcoreapp2.1\Scanner Project.dll
+C:\Users\taran\Documents\Houghton College Classwork\Programming Languages\Homework 2\Scanner Project\obj\Debug\netcoreapp2.1\Scanner Project.pdb
