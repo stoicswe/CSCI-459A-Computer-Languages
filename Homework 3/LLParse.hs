@@ -9,8 +9,8 @@
 --
 --  To test this code, load it into GHCi and type, e.g.
 --
---  > let prog = "read a read b sum := a+b write sum write sum/2" parse
---  > (parseTable calcGrammar) prog
+--  > let prog = "read a read b sum := a+b write sum write sum/2"
+--  > parse (parseTable calcGrammar) prog
 --
 --  Note that the input program is a list of strings.
 --
@@ -95,8 +95,8 @@ gflatten ((s,ps):ss) = s : concat ps ++ gflatten ss
 startSymbol :: Grammar -> String
 startSymbol ((s, _):_) = s
 
-endMarker :: Grammar -> String
-endMarker ((_, ps):_) = last (last ps)
+-- endMarker :: Grammar -> String
+-- endMarker ((_, ps):_) = last (last ps)
 
 -- | Return list of all nonterminals in grammar.
 nonterminals :: Grammar -> [String]
@@ -577,18 +577,18 @@ data Cond = Cond String Expr Expr
 -- to the AST.  Where you see 'undefined' you will have
 -- to fill in with an actual implementation.
 toAstP :: ParseTree -> AST
-toAstP _ = undefined
+toAstP (Node "P" [sl]) = toAstSL sl
 
 -- Replace the 'something' with a pattern match which will bind the
 -- correct 's' and 'sl' so the RHS can be:  toAstS s : toAstSL sl
 toAstSL :: ParseTree -> AST
-toAstSL (Node "SL" _) = undefined {- toAstS s : toAstSL sl -}
+toAstSL (Node "SL" [s, sl]) = toAstS s : toAstSL sl
 toAstSL _ = []
 
 toAstS :: ParseTree -> Statement
 -- Here you will want a pattern match on each LHS matching
 -- each RHS of the Statement data type.
-toAstS _ = undefined
+toAstS (Node "S" [Node i [], Node ":=" [], e]) = i := toAstE e
 
 toAstC :: ParseTree -> Cond
 toAstC _ = undefined
@@ -601,14 +601,22 @@ toAstE :: ParseTree -> Expr
 --   toAstE (Node "F" ...) =
 -- then build terms or factors
 --   toAstE (Node _ ...) = toAstETail ...
-toAstE _ = undefined
+toAstE (Node "E" [t, tt]) = toAstETail (toAstE t) tt
+toAstE (Node "T" [f, ft]) = toAstETail (toAstE f) ft
+toAstE (Node "F" [Node xs@(x:_) []]) 
+  | isAlpha' x = Var xs
+  | otherwise  = Lit (read xs)
+ -- toAstE (Node "")
+
+
 
 -- The second function 'toAstETail' handles TT and FT
 toAstETail :: Expr -> ParseTree -> Expr
 -- toAstETail e (Node _ ...) = ... (toAstE ...) ...
 -- toAstETail e ... = ...
-toAstETail _ _ = undefined
-
+toAstETail e (Node "TT" [Node "ao" [Node ao []], t, tt]) = toAstETail (Op ao e (toAstE t)) tt
+toAstETail e (Node "FT" [Node "mo" [Node mo []], t, tt]) = toAstETail (Op mo e (toAstE t)) tt
+toAstETail e (Node _ []) = e
 -- -----------------------------------------------------
 
 -- Model the state of the calculator
