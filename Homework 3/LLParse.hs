@@ -599,7 +599,7 @@ toAstE :: ParseTree -> Expr
 -- First the base cases from 'F'
 --   toAstE (Node "F" ...) =
 --   toAstE (Node "F" ...) =
--- then build terms or factors
+-- then build terms or factor
 --   toAstE (Node _ ...) = toAstETail ...
 toAstE (Node "E" [t, tt]) = toAstETail (toAstE t) tt
 toAstE (Node "T" [f, ft]) = toAstETail (toAstE f) ft
