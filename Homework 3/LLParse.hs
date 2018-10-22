@@ -591,6 +591,7 @@ toAstS :: ParseTree -> Statement
 toAstS (Node "S" [Node i [], Node ":=" [], e]) = i := toAstE e
 
 toAstC :: ParseTree -> Cond
+--toAstC (Node "C" [e, Node "rn" r, e2]) = toAstE e toAstRN r toAstE e2
 toAstC _ = undefined
 
 -- You can write 'toAstE' as a pair of functions.  The
