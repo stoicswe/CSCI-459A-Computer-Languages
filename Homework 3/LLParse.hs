@@ -589,9 +589,15 @@ toAstS :: ParseTree -> Statement
 -- Here you will want a pattern match on each LHS matching
 -- each RHS of the Statement data type.
 toAstS (Node "S" [Node i [], Node ":=" [], e]) = i := toAstE e
+-- check below:
+toAstS (Node "write" [e]) = Write (toAstE e)
+toAstS (Node "read" [Node i []]) = Read i
+toAstS (Node "if" [c, sl, eNd]) = If (toAstC c) (toAstSL sl)
+toAstS (Node "while" [c, sl, eNd]) = While (toAstC c) (toAstSL sl)
 
 toAstC :: ParseTree -> Cond
---toAstC (Node "C" [e, Node "rn" r, e2]) = toAstE e toAstRN r toAstE e2
+-- the code below needs to be edited:
+toAstC (Node "C" [el, Node "rn" [Node cs []], er]) = Cond cs (toAstE el) (toAstE er)
 toAstC _ = undefined
 
 -- You can write 'toAstE' as a pair of functions.  The
@@ -608,8 +614,6 @@ toAstE (Node "F" [Node xs@(x:_) []])
   | isAlpha' x = Var xs
   | otherwise  = Lit (read xs)
  -- toAstE (Node "")
-
-
 
 -- The second function 'toAstETail' handles TT and FT
 toAstETail :: Expr -> ParseTree -> Expr
