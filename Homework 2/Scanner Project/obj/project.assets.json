@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/Scanner Project.csproj",
+      "projectUniqueName": "/home/taranoshi/Documents/Houghton College/CSCI-459A-Computer-Languages/Homework 2/Scanner Project/Scanner Project.csproj",
       "projectName": "Scanner Project",
-      "projectPath": "/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/Scanner Project.csproj",
+      "projectPath": "/home/taranoshi/Documents/Houghton College/CSCI-459A-Computer-Languages/Homework 2/Scanner Project/Scanner Project.csproj",
       "packagesPath": "/home/taranoshi/.nuget/packages/",
-      "outputPath": "/home/taranoshi/Documents/Houghton College/Programming Languages/Homework 2/Scanner Project/obj/",
+      "outputPath": "/home/taranoshi/Documents/Houghton College/CSCI-459A-Computer-Languages/Homework 2/Scanner Project/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
