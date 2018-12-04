@@ -694,7 +694,7 @@ exprs = {
     'ISNIL':  ("λl. l (λh. λt. λd. FALSE) TRUE",                  TUnit),
     'LEFT' :  ("PAIR FALSE",                                      TUnit),
     'RIGHT':  ("PAIR TRUE",                                       TUnit),
-    'EITHER': ("λl . λr. λe. IF (FIRST e) (r e) (l e)",           TUnit),
+    'EITHER': ("λl . λr. λe. IF (FIRST e) (r SECOND e) (l SECOND e)",           TUnit),
 }
 metaVars = {k: parseExpr(e) for k,(e,t) in exprs.items()}
 
@@ -743,3 +743,81 @@ def sumREE(ns):
     for n in ns:
         e = App(App(MV("CONS"), ENum(n)), e)
     return e"""
+
+primesStr = """
+    (λmap. λminus. λlast. λnprimes. last
+        (   (Y (λeuler. λm. λps.
+                    IF (NOT (LEQ (MULT (HEAD ps) (HEAD ps)) m))
+                        ps
+                        (CONS (HEAD ps) (euler m (minus (TAIL ps)
+                                                    (map (MULT (HEAD ps)) ps))))
+                )
+            )
+            nprimes
+            (   (Y (λto. λn. λm.
+                        IF (LEQ n m)
+                            (CONS n (to (SUCC n) m))
+                            NIL
+                    )
+                )
+                2
+                nprimes
+            )
+        )
+    )
+    (Y (λmap. λf. λl.
+            IF (ISNIL l)
+                NIL
+                (CONS (f (HEAD l)) (map f (TAIL l)))
+        )
+    )
+    (Y (λminus. λa. λb.
+            IF (OR (ISNIL a) (ISNIL b)) a
+                (IF (LEQ (SUCC (HEAD a)) (HEAD b))
+                    (CONS (HEAD a) (minus (TAIL a) b))
+                    (IF (LEQ (HEAD a) (HEAD b))
+                        (minus (TAIL a) (TAIL b))
+                        (minus a (TAIL b))
+                    )
+                )
+        )
+    )
+    (Y (λlast. λl.
+          IF (ISNIL (TAIL l))
+             (HEAD l)
+             (last (TAIL l))
+       )
+    )
+    {} s z"""
+
+def primesE(n):
+    e = primesStr.format(n)
+    return parseExpr(e)
+
+def signedNumber(x):
+    if x < 0:
+        return "LEFT " + str(-x)
+    return "RIGHT " + str(x)
+
+# Program to add two "signed" numbers.
+plusNegStr = """
+    (λplus. EITHER (λn. n s z neg) (λp. p s z pos) (plus ({}) ({})))
+    (λa. λb.
+        EITHER (λna.
+            EITHER (λnb. LEFT (PLUS na nb))
+                   (λpb. IF (LEQ na pb)
+                            (RIGHT (SUB pb na))
+                            (LEFT  (SUB na pb)))
+                   b)
+               (λpa.
+            EITHER (λnb. IF (LEQ nb pa)
+                            (RIGHT (SUB pa nb))
+                            (LEFT  (SUB nb pa)))
+                   (λpb. RIGHT (PLUS pa pb))
+                   b)
+            a)
+    """
+
+def plusNegE(a, b):
+    e = plusNegStr.format(signedNumber(a), signedNumber(b))
+    return parseExpr(e)
