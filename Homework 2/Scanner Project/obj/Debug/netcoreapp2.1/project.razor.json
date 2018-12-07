@@ -1,21 +1,6 @@
 {
-<<<<<<< HEAD
   "ProjectFilePath": "c:\\Users\\taran\\Documents\\Houghton College Classwork\\CSCI-459A-Computer-Languages\\Homework 2\\Scanner Project\\Scanner Project.csproj",
   "TargetFramework": "netcoreapp2.1",
   "TagHelpers": [],
   "Configuration": null
-=======
-  "ProjectFilePath": "/home/taranoshi/Documents/Houghton College/CSCI-459A-Computer-Languages/Homework 2/Scanner Project/Scanner Project.csproj",
-  "TargetFramework": "netcoreapp2.1",
-  "TagHelpers": [],
-  "Configuration": {
-    "ConfigurationName": "UnsupportedRazor",
-    "LanguageVersion": "1.0",
-    "Extensions": [
-      {
-        "ExtensionName": "UnsupportedRazorExtension"
-      }
-    ]
-  }
->>>>>>> refs/remotes/origin/master
 }
