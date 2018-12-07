@@ -692,9 +692,9 @@ exprs = {
     'HEAD':   ("FIRST",                                           TUnit),
     'TAIL':   ("SECOND",                                          TUnit),
     'ISNIL':  ("λl. l (λh. λt. λd. FALSE) TRUE",                  TUnit),
-    'LEFT' :  ("PAIR FALSE",                                      TUnit),
-    'RIGHT':  ("PAIR TRUE",                                       TUnit),
-    'EITHER': ("λl . λr. λe. IF (FIRST e) (r SECOND e) (l SECOND e)",           TUnit),
+    'LEFT' :  ("PAIR F",                                      TUnit),
+    'RIGHT':  ("PAIR T",                                       TUnit),
+    'EITHER': ("λl. λr. λe. IF (FIRST e) (r (SECOND e)) (l (SECOND e))",           TUnit),
 }
 metaVars = {k: parseExpr(e) for k,(e,t) in exprs.items()}
 
